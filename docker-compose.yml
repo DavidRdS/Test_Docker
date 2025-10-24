@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  nginx:
+    build: ./nginx
+    ports:
+      - "8080:80"
+    depends_on:
+      - logger
+
+  logger:
+    build: ./logger
+    ports:
+      - "3000:3000"
